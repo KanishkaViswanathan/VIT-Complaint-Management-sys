@@ -12,8 +12,8 @@ const port = 1337;
 
 // AWS SDK configuration
 AWS.config.update({
-    accessKeyId: 'AKIAQKPILXBTVX5QFV6G', // Replace with your access key ID
-    secretAccessKey: 'ZILee1Hg1Hhg+Xf1Ha+axXvd+qsYrNCZFo7byVG3', // Replace with your secret access key
+    accessKeyId: 'AKIA3M7ACS7ZX542PZMF', // Replace with your access key ID
+    secretAccessKey: '+Pa8HpTgb5M1WAcwekaadO/VADnhfdNmaHWHkedP', // Replace with your secret access key
     region: 'ap-south-1' // Replace with your AWS region
 });
 
@@ -125,7 +125,7 @@ app.get('/main', isAuthenticated, (req, res) => {
 async function sendSNSNotification(message) {
     const params = {
         Message: message,  // The message to send
-        TopicArn: 'arn:aws:sns:ap-south-1:022499014759:complaintNotifications' // Your SNS Topic ARN (replace with your actual ARN)
+        TopicArn: 'arn:aws:sns:ap-south-1:783764592627:Complaint' // Your SNS Topic ARN (replace with your actual ARN)
     };
 
     try {
