@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VIT Complaint Management System</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="theme.css" />
+</head>
+<body>
+    <div id="headerS">
+        <img src="vitlogo.png" alt="VIT Logo" class="logo">
+        <h1 style="text-align: center;">COMPLAINT MANAGEMENT SYSTEM</h1>
+    </div>
+    <div id="container">
+        <h2>Submit Your Complaint</h2>
+        <form id="complaintForm">
+            <label for="registrationId">Registration ID:</label>
+            <input type="text" id="registrationId" name="registrationId" required />
+        
+            <label for="complaintType">Type of Complaint:</label>
+            <select id="complaintType" name="type" required>
+                <option value="Hostel">Hostel Complaint</option>
+                <option value="Educational">Educational Complaint</option>
+                <option value="Faculty">Faculty Complaint</option>
+                <option value="Other">Other</option>
+            </select>
+        
+            <label for="description">Description:</label>
+            <textarea id="description" name="complaintText" rows="5" required></textarea>
+        
+            <button type="submit">Submit Complaint</button>
+        </form>
+        
+        <div id="complaintNumber"></div> <!-- Container to display the complaint number -->
+    </div>
+    <div id="footer">
+        <p>&copy; 2024 Vellore Institute of Technology. All rights reserved.</p>
+    </div>
+
+    <script>
+        document.getElementById('complaintForm').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const formData = new FormData(this);
+            const formObject = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(' /submit-complaint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formObject)
+                });
+
+                const result = await response.json();
+
+                const complaintNumberDiv = document.getElementById('complaintNumber');
+                if (result.success) {
+                    complaintNumberDiv.textContent = `Complaint submitted successfully! Your complaint number is: ${result.complaintNumber}`;
+                    complaintNumberDiv.style.color = '#28a745'; // Green color for success
+                } else {
+                    complaintNumberDiv.textContent = `Error: ${result.message}`;
+                    complaintNumberDiv.style.color = '#dc3545'; // Red color for error
+                }
+            } catch (error) {
+                console.error('Error submitting complaint:', error);
+                document.getElementById('complaintNumber').textContent = 'An unexpected error occurred. Please try again later.';
+            }
+        });
+    </script>
+</body>
+</html>

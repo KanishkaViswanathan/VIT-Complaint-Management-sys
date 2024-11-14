@@ -1,0 +1,166 @@
+/* Reset and layout styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    font-size: 16px;
+    
+}
+
+body{
+    background:url('../../best-laptops-college-students.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+
+
+#headerS h1{
+    margin-left: 350px; /* Space between the logo and heading */
+    font-size: 1.8rem;
+    color:#FFFFFF;
+}
+/* Header */
+#headerS {
+    display: flex;
+    align-items: center;
+    background: #022778;
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    height: 100px; /* Set a fixed height for the header */
+    position: relative;
+}
+
+
+
+#logo {
+    
+    height: 75px;
+    width: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%; /* Make the logo's height equal to the header */
+}
+
+#header h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0;
+    margin-left: 120px; /* Add left margin to avoid overlap with logo */
+}
+
+
+
+/* Container */
+/* Container */
+#container {
+    margin: 80px auto;
+    padding: 30px 40px; /* Adjusted padding for better form spacing */
+    max-width: 800px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling inside Container */
+#container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+}
+
+#container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#container input, #container select, #container textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%; /* Ensure elements fit container width */
+}
+
+#container button {
+    background-color: #022778;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#container button:hover {
+    background-color: #0144b8;
+}
+
+#complaintNumber {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #28a745;
+    font-weight: bold;
+}
+
+
+/* Footer */
+#footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #022778;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    width: 45%;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.good {
+    background-color: #28a745;
+}
+.bad {
+    background-color: #dc3545;
+}
+
+.button:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Typography */
+h1, h2 {
+    margin-bottom: 20px;
+    color: #27272e;
+
+}
+
+p {
+    margin-bottom: 30px;
+}

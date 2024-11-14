@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="main2.css" />
+    <script>
+        // Display error message if there is an error query parameter
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('error')) {
+                const errorBox = document.createElement('div');
+                errorBox.textContent = 'Invalid username or password';
+                errorBox.style.color = 'red';
+                errorBox.style.marginBottom = '20px';
+                document.getElementById('container').prepend(errorBox);
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+</body>
+</html>

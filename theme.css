@@ -1,0 +1,20 @@
+Customize this CSS for simple customization of main theme colors
+html {    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* #header {
+    background: #0066fe;
+} */
+/* #logo {
+    background: url("https://skmotorsport.com/wp-content/themes/skmotorsport2/images/skmotorsportlogo.png") no-repeat;
+    height: 75px;
+    width: 100%;
+} */
+
+/* Buttons */
+.good {
+    background: green;
+}
+.bad {
+    background: red;
+}
