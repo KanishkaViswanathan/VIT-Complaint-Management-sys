@@ -12,8 +12,8 @@ const port = 1337;
 
 // AWS SDK configuration
 AWS.config.update({
-    accessKeyId: 'AKIA3M7ACS7ZX542PZMF', // Replace with your access key ID
-    secretAccessKey: '+Pa8HpTgb5M1WAcwekaadO/VADnhfdNmaHWHkedP', // Replace with your secret access key
+    accessKeyId: '', // Replace with your access key ID
+    secretAccessKey: '', // Replace with your secret access key
     region: 'ap-south-1' // Replace with your AWS region
 });
 
